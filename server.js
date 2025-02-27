@@ -27,7 +27,6 @@ const corsOptions = {
     "http://localhost:5173",
     "https://red-product-backend-a1ix.onrender.com",
     "https://red-product-frontend.onrender.com",
-    "https://red-product-ibrahima-fadiabas-projects.vercel.app",
   ],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
