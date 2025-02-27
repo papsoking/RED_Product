@@ -24,8 +24,9 @@ app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
   origin: [
+    "http://localhost:3000",
     "http://localhost:5173",
-    "https://red-product-backend-29bx.onrender.com",
+    "https://red-product-backend-risb.onrender.com",
     "https://red-product-frontend.onrender.com",
   ],
   credentials: true,
