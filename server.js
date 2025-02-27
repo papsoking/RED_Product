@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://red-product-backend-a1ix.onrender.com"],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
   exposedHeaders: ["sessionId"],
