@@ -26,7 +26,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://red-product-backend-a1ix.onrender.com",
-    "https://frontend-beta-one-99.vercel.app",
+    "https://red-product-mauve.vercel.app",
   ],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
