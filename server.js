@@ -23,7 +23,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://red-product-backend-a1ix.onrender.com"],
+  origin: [
+    "http://localhost:5173",
+    "https://red-product-backend-a1ix.onrender.com",
+    "https://frontend-beta-one-99.vercel.app",
+  ],
   credentials: true,
   allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
   exposedHeaders: ["sessionId"],
@@ -32,12 +36,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-
 // Middlewares pour parser les données du formulaire
 app.use(express.json()); // Pour parser les données JSON
 app.use(express.urlencoded({ extended: true })); // Pour parser les données URL-encoded
 app.use(cookieParser());
-
 
 // jwt
 app.get("*", checkUser);
