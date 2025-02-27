@@ -12,6 +12,8 @@ export const Main = styled.div`
 export const DashboardContainer = styled(PageContainer)`
   margin: 0;
   padding: 0;
+  height: 100%;
+  background: #f0f0f0;
 `;
 
 export const TitleSectionDashboard = styled.div`
