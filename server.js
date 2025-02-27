@@ -25,11 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://red-product-backend-pieh.onrender.com",
     "https://red-product-frontend.onrender.com",
+    "https://red-product-backend-pieh.onrender.com",
   ],
   credentials: true,
-  allowedHeaders: ["sessionId", "Content-Type", "Authorization"],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+    "sessionId",
+  ],
   exposedHeaders: ["sessionId"],
   methods: "GET,PUT,POST,DELETE",
   preflightContinue: false,
