@@ -19,7 +19,7 @@ const createToken = (id) => {
 const signUp = async (req, res) => {
   const { nom, email, password } = req.body;
 
-  const hashedPassword = await bcrypt.hash(motDePasse, 10);
+  const hashedPassword = await bcrypt.hash(password, 10);
   try {
     const user = await UserModel.create({ nom, email, password: hashedPassword });
     res.json({ user: user._id });
