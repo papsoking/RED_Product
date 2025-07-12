@@ -26,6 +26,7 @@ import { useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { BsPencilFill } from "react-icons/bs";
 import HotelModal from "../../components/HotelModal";
+import { BgSidebar } from "../../styles/sidebar.style";
 
 export default function ListeHotels() {
   const [isModalContainerVisible, setIsModalContainerVisible] = useState(false);
@@ -37,6 +38,9 @@ export default function ListeHotels() {
 
   const userId = localStorage.getItem("USER_ID");
   const token = localStorage.getItem("token");
+
+  const { menuOpen, setMenuOpen } = useContext(AuthContext);
+
 
   useEffect(() => {
     if (!user?.loggedIn) {
@@ -107,7 +111,8 @@ export default function ListeHotels() {
 
   return (
     <>
-      <SideBar $value={false} />
+    <BgSidebar open={menuOpen} onClick={() => setMenuOpen(false)} />
+      <SideBar />
       <Main>
         <Header title={["Liste des hôtels"]} />
         <PageContainer>

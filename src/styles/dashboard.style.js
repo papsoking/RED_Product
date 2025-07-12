@@ -89,7 +89,7 @@ export const PIcon = styled.h1`
 `;
 
 export const UsersIcon = styled.svg`
-  background-color: ${(props) => (props.$default ? "#FCC100" : "#1565C0")};
+  background-color: ${(props) => (props.$defaultUsers ? "#FCC100" : "#1565C0")};
   fill: none;
   border-radius: 50%;
   width: 24px;

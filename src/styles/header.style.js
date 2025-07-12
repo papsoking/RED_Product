@@ -18,11 +18,22 @@ export const HeaderSection = styled.div`
   padding: 10px 20px 15px;
 `;
 
+export const MenuHamburger = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
 export const HeaderSectionTitle = styled.h2`
   font-style: normal;
   margin: 0;
   font-size: 26px;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const HeaderInfo = styled.div`
@@ -31,6 +42,10 @@ export const HeaderInfo = styled.div`
   align-items: center;
   gap: 15px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 export const SearchBarContainer = styled.div`

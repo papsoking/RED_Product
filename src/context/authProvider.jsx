@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Vérifier si l'utilisateur est connecté au chargement de l'application
   useEffect(() => {
@@ -29,8 +30,13 @@ export const AuthProvider = ({ children }) => {
     navigate("/auth/login"); // Rediriger vers la page de connexion
   };
 
+  // Fonction de toggle du menu
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, menuOpen, setMenuOpen, toggleMenu }}>
       {children}
     </AuthContext.Provider>
   );

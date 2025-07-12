@@ -3,6 +3,17 @@ import { AppLogo, AuthTitle, Container } from "./auth.style";
 const LINK_COLOR = "#4D5154";
 const ACTIVE_LINK_COLOR = "#F0F0F0";
 
+export const BgSidebar = styled.div`
+  background: #000;
+  width: ${({ open }) => (open ? "100%" : "0")};
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 1000;
+`;
+
 export const SideBarContainer = styled(Container)`
   width: 250px;
   height: 100dvh;
@@ -10,9 +21,13 @@ export const SideBarContainer = styled(Container)`
   justify-content: space-between;
   align-items: flex-start;
   padding: 0;
+  left: ${({ open }) => (open ? 0 : "-250px")}; /* Masqué ou visible */
+  transition: left 0.3s ease;
+  z-index: 1000;
 
-  @media (max-width: 768px) {
-    display: none;
+  @media (min-width: 769px) {
+    /* position: relative; */
+    left: 0; /* Toujours visible en grand écran */
   }
 `;
 

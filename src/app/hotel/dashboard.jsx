@@ -15,9 +15,12 @@ import {
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
+import { BgSidebar } from "../../styles/sidebar.style";
 export default function Dashboard() {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const { menuOpen, setMenuOpen } = useContext(AuthContext);
   
 
   useEffect(() => {
@@ -31,7 +34,8 @@ export default function Dashboard() {
     
   return (
     <>
-      <SideBar $value={true} fillValue={true} />
+    <BgSidebar  open={menuOpen} onClick={() => setMenuOpen(false)} />
+      <SideBar />
       <Main>
         <Header title={["Dashboard"]} />
         <DashboardContainer>

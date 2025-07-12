@@ -17,10 +17,19 @@ import {
   UserOnlineText,
 } from "../styles/sidebar.style";
 import { AppLogo } from "../styles/auth.style";
+import { AuthContext } from "../context/authContext";
+import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 
-export default function SideBar({ $value }) {
+export default function SideBar() {
+  const { menuOpen } = useContext(AuthContext);
+
+  const location = useLocation();
+  const isDashboard = location.pathname === "/hotel/dashboard";
+  const isListeHotels = location.pathname === "/hotel/listehotels";
+
   return (
-    <SideBarContainer>
+    <SideBarContainer open={menuOpen}>
       <div style={{ width: "100%" }}>
         <SideBarLogo>
           <AppLogo xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -45,13 +54,13 @@ export default function SideBar({ $value }) {
           <SideBarLinksLI>
             <SideBarLinkA
               href="/hotel/dashboard"
-              $active={Boolean($value)}
+              $active={isDashboard}
               className="nav-item"
             >
               <SideBarLinkIcon
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 23 23"
-                $active={Boolean($value)}
+                $active={isDashboard}
               >
                 <g path="url(#clip0_5_5)">
                   <path
@@ -70,13 +79,13 @@ export default function SideBar({ $value }) {
             </SideBarLinkA>
             <SideBarLinkA
               href="/hotel/listehotels"
-              $active={Boolean(!$value)}
+              $active={isListeHotels}
               className="nav-item"
             >
               <SideBarLinkIcon
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                $active={Boolean(!$value)}
+                $active={isListeHotels}
               >
                 <g path="url(#clip0_1_392)">
                   <path

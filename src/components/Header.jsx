@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {
+  MenuHamburger,
   HeaderContainer,
   HeaderSection,
   HeaderSectionTitle,
@@ -22,6 +23,7 @@ import toast from "react-hot-toast";
 export default function Header({ title }) {
   const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { toggleMenu } = useContext(AuthContext);
 
   const handleLogout = () => {
     logout(); // Appelle la fonction logout du contexte
@@ -35,6 +37,10 @@ export default function Header({ title }) {
   return (
     <HeaderContainer>
       <HeaderSection>
+      <MenuHamburger onClick={toggleMenu}>
+        <span className="material-symbols-outlined">menu</span>
+      </MenuHamburger>
+
         <HeaderSectionTitle>{firstTitle}</HeaderSectionTitle>
         <HeaderInfo>
           <form action="" method="get">
