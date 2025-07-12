@@ -39,6 +39,10 @@ export const SearchBarContainer = styled.div`
   padding: 5px 10px;
   border: 2px solid rgba(120, 130, 140, 0.13);
   border-radius: 50px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const FaSearchInput = styled(FaSearch)`

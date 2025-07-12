@@ -10,6 +10,10 @@ export const SideBarContainer = styled(Container)`
   justify-content: space-between;
   align-items: flex-start;
   padding: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SideBarLogo = styled(AuthTitle)`
@@ -78,7 +82,7 @@ export const UserImageContainer = styled.div`
   height: 50px;
   border-radius: 100%;
   flex-shrink: 0;
-  background-image: url("/images/userIcon.png");
+  background-image: url("https://placehold.co/50x50@2x.png");
   background-position: top;
   background-size: cover;
 `;

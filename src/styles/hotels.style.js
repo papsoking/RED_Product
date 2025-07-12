@@ -115,7 +115,7 @@ export const HotelDescription = styled.div`
 
 export const HotelAdresse = styled.p`
   color: #8d4b38;
-  font-size: 1rem;
+  font-size: 14px;
 `;
 
 export const HotelName = styled.h4`

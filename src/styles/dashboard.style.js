@@ -7,6 +7,10 @@ export const Main = styled.div`
   padding: 0;
   background: #f0f0f0;
   height: 100dvh;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export const DashboardContainer = styled(PageContainer)`

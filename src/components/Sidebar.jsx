@@ -98,7 +98,7 @@ export default function SideBar({ $value }) {
         </SideBarLinksUL>
       </div>
       {/* Sidebar footer */}
-      <div style={{ marginBottom: "60px" }}>
+      <div>
         <SideBarFooter>
           <UserImageContainer />
           <UserInfos>
