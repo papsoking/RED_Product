@@ -102,7 +102,7 @@ export default function SideBar({ $value }) {
         <SideBarFooter>
           <UserImageContainer />
           <UserInfos>
-            <UserName>Mouhamet Badiane</UserName>
+            <UserName>Ibrahima Fadiaba</UserName>
             <UserStatus>
               <UserOnlineIcon />
               <UserOnlineText>en ligne</UserOnlineText>
